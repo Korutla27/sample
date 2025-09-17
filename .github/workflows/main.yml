@@ -70,7 +70,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
-            docker pull ${{ secrets.DOCKER_USERNAME }}/myapp:latest
+            docker pull ${{ secrets.DOCKER_USERNAME }}/flaskapp:latest
             docker stop myapp || true
             docker rm myapp || true
             docker run -d -p 8000:8000 --name myapp ${{ secrets.DOCKER_USERNAME }}/myapp:latest
